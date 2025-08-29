@@ -59,10 +59,32 @@ Node *remove_node(Node *head, Node *node) {
 
 
 Node *(prepend)(Node *head, int item) {
-    Node *new_node = create_node(item, head);
-    return new_node; // New node is the new head
+    Node *new_node = create_node(item, NULL);
+    if (head == NULL) {
+        return new_node; // If the list is empty, new node is the head
+    }
+    Node *current_node = head;
+    while (current_node->next != NULL) {
+        current_node = current_node->next;
+    }
+    current_node->next = new_node;
+    return head; // Return the original head    
 }
 
+
+
+Node *(append)(Node *head, int item) {
+    Node *new_node = create_node(item, NULL);
+    if (head == NULL) {
+        return new_node; // If the list is empty, new node is the head
+    }
+    Node *current_node = head;
+    while (current_node->next != NULL) {
+        current_node = current_node->next;
+    }
+    current_node->next = new_node;
+    return head; // Return the original head
+}
 
 
 int main() {
