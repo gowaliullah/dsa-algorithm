@@ -58,6 +58,12 @@ Node *remove_node(Node *head, Node *node) {
 
 
 
+Node *(prepend)(Node *head, int item) {
+    Node *new_node = create_node(item, head);
+    return new_node; // New node is the new head
+}
+
+
 
 int main() {
    Node *n;
