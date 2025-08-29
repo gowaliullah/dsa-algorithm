@@ -79,7 +79,7 @@ Node *(append)(Node *head, int item) {
         return new_node; // If the list is empty, new node is the head
     }
     Node *current_node = head;
-    while (current_node->next != NULL) {
+    while (current_node->next != NULL) { // time complexity O(n)
         current_node = current_node->next;
     }
     current_node->next = new_node;
