@@ -26,6 +26,35 @@ Node *create_node(int item, Node *next) {
 }
 
 
+Node *remove_node(Node *head, Node *node) {
+
+
+    if (node == head){
+        head = head->next;
+        free(node);
+        return head;
+    }
+    
+
+    Node *current_node = head;
+    
+    while (current_node != NULL) {
+       if (current_node->next == node) {
+           break; // Node found
+       }
+         current_node = current_node->next;
+    }
+    
+    
+    if (current_node == NULL) {
+        return head; // Item not found, return original head
+    }
+
+    current_node->next = node->next;
+    free(node);
+    return head;
+  
+}
 
 
 
