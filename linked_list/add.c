@@ -17,36 +17,6 @@ Node *create_node(int data, Node *next) {
     return node;
 }
 
-void print_list(Node *head) {
-    Node *current = head;
-    while (current != NULL) {
-        printf("%d -> ", current->data);
-        current = current->next;
-    }
-    printf("NULL\n");
-}
-
-int main() {
-    Node *head = NULL;
-    head = append(head, 10);
-    head = append(head, 20);
-    head = append(head, 30);
-    print_list(head);
-
-    // Remove the second node (with value 20)
-    Node *to_remove = head->next;
-    head = remove_node(head, to_remove);
-    print_list(head);
-
-    // Free remaining nodes
-    while (head != NULL) {
-        Node *temp = head;
-        head = head->next;
-        free(temp);
-    }
-    return 0;
-}
-
 Node *(append)(Node *head, int item) {
     Node *new_node = create_node(item, NULL);
     if (head == NULL) {
