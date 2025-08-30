@@ -20,3 +20,12 @@ Node *create_tree_node(int item) {
     new_node->right = NULL;
     return new_node;
 }
+
+
+void add_left_child(Node *node, Node *child) {
+    node->left = child;
+}
+
+void add_right_child(Node *node, Node *child) {
+    node->right = child;
+}
