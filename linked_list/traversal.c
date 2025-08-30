@@ -18,7 +18,7 @@ Node *create_node(int data, Node *next) {
     return node;
 }
 
-void print_list(Node *head) {
+void print_list(Node *head) { // time complexity of this program: O(n)
     Node *current_node = head;
     while (current_node != NULL) {
         printf("%d -> ", current_node->data);
