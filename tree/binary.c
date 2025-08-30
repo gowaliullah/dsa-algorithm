@@ -50,3 +50,12 @@ Node *create_tree() {
 
     return two;
 }
+
+
+
+
+int main() {
+    Node *root = create_tree();
+    printf("%d\n", root->data);
+    return 0;
+}
