@@ -62,8 +62,21 @@ void pre_order(Node *node) {
     if (node->right != NULL) {
         pre_order(node->right);
     }
-    
 }
+
+
+// post order for traversal 
+void post_order(Node *node) {
+    if (node->left != NULL) {
+        post_order(node->left);
+    }
+    if (node->right != NULL) {
+        post_order(node->right);
+    }
+    printf("%d ", node->data);
+}
+
+
 
 int main() {
     Node *root = create_tree();
